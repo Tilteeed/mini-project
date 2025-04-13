@@ -44,3 +44,20 @@ def get_total() -> float:
         Общая сумма расходов
     """
     return sum(expense["amount"] for expense in expenses)
+
+
+def get_by_category(category: str) -> list[dict]:
+    """
+    Фильтрует расходы по указанной категории.
+
+    Args:
+        category: Категория для фильтрации
+
+    Returns:
+        Список расходов в указанной категории
+    """
+    return [
+        expense
+        for expense in expenses
+        if expense["category"].lower() == category.lower()
+    ]

@@ -1,4 +1,4 @@
-from tracker import add_expense, get_expenses, get_total
+from tracker import add_expense, get_expenses, get_total, get_by_category
 
 
 def main():
@@ -33,6 +33,23 @@ def main():
         elif choice == "3":
             total = get_total()
             print(f"Общая сумма расходов: {total:.2f}")
+        elif choice == "4":
+            category = input("Введите категорию для фильтрации: ")
+            category_expenses = get_by_category(category)
+            if not category_expenses:
+                print(f"Нет расходов в категории '{category}'")
+            else:
+                for expense in category_expenses:
+                    print(
+                        f"{expense['category']}: {expense['amount']} - {expense['description']}"
+                    )
+
+        elif choice == "5":
+            print("До свидания!")
+            break
+
+        else:
+            print("Неверный ввод, попробуйте еще раз")
 
 
 if __name__ == "__main__":
