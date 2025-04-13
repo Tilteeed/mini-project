@@ -29,7 +29,10 @@ def main():
                 print("Нет расходов для отображения")
             else:
                 for idx, expense in enumerate(all_expenses, 1):
-                    print(f"{idx}. {еxpense['category']}: {еxpense['amount']}")
+                    # print(expense)  # {'amount': 300.0, 'category': 'eda', 'description': ''}
+                    # print(f"{idx}. {еxpense['category']}: {еxpense['amount']}")  # NameError: name 'еxpense' is not defined была в цикле указана как expense
+                    # у меня в принте указана как еxpense только е русская
+                    print(f"{idx}. {expense['category']}: {expense['amount']}")
         elif choice == "3":
             total = get_total()
             print(f"Общая сумма расходов: {total:.2f}")
