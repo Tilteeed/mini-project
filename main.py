@@ -1,4 +1,4 @@
-from tracker import add_expense, get_expenses, get_total, get_by_category
+from tracker import add_expense, get_expenses, get_total
 
 
 def main():
@@ -23,6 +23,16 @@ def main():
                 print("Расход добавлен!")
             except ValueError as e:
                 print(f"Ошибка: {e}")
+        elif choice == "2":
+            all_expenses = get_expenses()
+            if not all_expenses:
+                print("Нет расходов для отображения")
+            else:
+                for idx, expense in enumerate(all_expenses, 1):
+                    print(f"{idx}. {еxpense['category']}: {еxpense['amount']}")
+        elif choice == "3":
+            total = get_total()
+            print(f"Общая сумма расходов: {total:.2f}")
 
 
 if __name__ == "__main__":
