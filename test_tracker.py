@@ -2,6 +2,7 @@ import pytest
 from tracker import add_expense, get_expenses, get_total, get_by_category
 
 
+# Финал
 @pytest.fixture(autouse=True)
 def clear_expenses():
     from tracker import expenses

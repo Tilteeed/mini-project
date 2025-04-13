@@ -1,5 +1,7 @@
 from tracker import add_expense, get_expenses, get_total, get_by_category
 
+# Финал
+
 
 def main():
     print("Калькулятор расходов")
